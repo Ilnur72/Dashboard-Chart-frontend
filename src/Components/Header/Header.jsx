@@ -1,46 +1,62 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import logo from "../../assets/Images/Ai-work.svg"
 
 import "./header.scss"
 
-const dataMonth = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'iyul', 'Avgust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'];
+// const dataMonth = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'iyul', 'Avgust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'];
 
-const Header = () => {
-
-  const [count, setCount] = useState(0);
-  const [month, setMonth] = useState(dataMonth[0]);
-  console.log(dataMonth[0]);
+const Header = ({dataRes}) => {
+  const [getData, setGetData] = useState("");
+  const [count, setCount] = useState("");
+  const [month, setMonth] = useState("");
   useEffect(() => {
     async function getData(){
-      // let data = axios.get(`baseUrl/admin/head-one/${count}`)
-      if(count < 12){
-        setMonth(dataMonth[count])
-      }
+      let {data} = await axios.get(`getHeadOne`)
+      setGetData(data)
+      setCount({chartYear: data.year, chartMonth: data.month})
+      setMonth(data)
     }
     getData()
-  }, [count]);
+  }, []);
+  
+  async function counterDecrement(){
+    try {
+      let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth-1}`)
+      setMonth(data)
+      if(count.chartMonth > 1){
+        setCount({...count, chartMonth: +count.chartMonth - 1})
+      }
+    } catch (error) {
+      toast("Bu oyda ma'lumotlar yo'q!", {type: "error"})
+    }
+  }
 
-  function counterIncrement(){
-    if(count < 12){
-      setCount(count + 1)
+  async function counterIncrement(){
+    try {
+      let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth+1}`)
+      setMonth(data)
+      if(count.chartMonth < 12){
+        setCount({...count, chartMonth: +count.chartMonth + 1})
+      }
+    } catch (error) {
+      toast("Bu oyda ma'lumotlar yo'q!", {type: "error"})
     }
   }
-  function counterDecrement(){
-    if(count >= 1){
-      setCount(count - 1)
-    }
-  }
+
+  dataRes(count)
 
   return (
     <header className='px-5 d-flex align-items-center'>
        <div className='col-5'>
-          <img className='' width={150} src={logo} alt="ai-work logo " />
+          <Link to={"/"}><img className='' width={150} src={logo} alt="ai-work logo " /></Link>
        </div>
         <div className='d-flex align-items-center justify-content-start col-7 px-5 gap-2'>
             <div className='d-flex align-items-center col-4 justify-content-between'>
               <button onClick={() => counterDecrement()} className='btn bg-primary py-0'><i className="fa-solid fa-arrow-left text-white"></i></button>
-              <strong className='text-white fs-4 mx-3'>{month}</strong>
+              <strong className='text-white fs-4 mx-3'>{month.monthName}</strong>
               <button onClick={() => counterIncrement()} className='btn bg-primary py-0'><i className="fa-solid fa-arrow-right text-white"></i></button>
             </div>
         </div>

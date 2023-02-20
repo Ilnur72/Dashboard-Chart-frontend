@@ -3,15 +3,21 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./Components/Header/Header";
 
 //Style
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
+import "react-toastify/dist/ReactToastify.css"
+
+
+import axios from "axios";
+import { ToastContainer } from "react-toastify";
+
+axios.defaults.baseURL = "http://185.217.131.88:8080/admin/"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Router>
-    <Header />
     <App />
+    <ToastContainer />
   </Router>
 );
