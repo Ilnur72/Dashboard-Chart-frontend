@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
     XAxis,
@@ -13,39 +12,6 @@ import {
     Area,
   } from "recharts";
 
-
-
-
-  // const data = [
-  //   {
-  //     name: "1",
-  //     pv: 2400,
-  //   },
-  //   {
-  //     name: "2",
-  //     pv: 1398,
-  //   },
-  //   {
-  //     name: "3",
-  //     pv: 9800,
-  //   },
-  //   {
-  //     name: "4",
-  //     pv: 3908,
-  //   },
-  //   {
-  //     name: "5",
-  //     pv: 4800,
-  //   },
-  //   {
-  //     name: "6",
-  //     pv: 3800,
-  //   },
-  //   {
-  //     name: "7",
-  //     pv: 4300,
-  //   },
-  // ];
 
   const Linechart = ({id, color, dataItem, idCard,}) => {
     const [chart, setChart] = useState([]);
@@ -120,7 +86,6 @@ import {
           <XAxis dataKey="day" />
           <YAxis strokeDasharray="0" color="#fff" />
           <CartesianGrid vertical={false} />
-          {/* <YAxis allowDecimals={false} axisLine={false} domain={[1, 3]} tickLine={false} tickMargin={10} ticks={[1, 2, 3]} type="number" /> */}
           <Tooltip />
           <Legend />
           <Area

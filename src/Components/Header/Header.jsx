@@ -6,16 +6,13 @@ import logo from "../../assets/Images/Ai-work.svg"
 
 import "./header.scss"
 
-// const dataMonth = ['Yanvar', 'Fevral', 'Mart', 'Aprel', 'May', 'Iyun', 'iyul', 'Avgust', 'Sentyabr', 'Oktyabr', 'Noyabr', 'Dekabr'];
 
 const Header = ({dataRes}) => {
-  const [getData, setGetData] = useState("");
   const [count, setCount] = useState("");
   const [month, setMonth] = useState("");
   useEffect(() => {
     async function getData(){
       let {data} = await axios.get(`getHeadOne`)
-      setGetData(data)
       setCount({chartYear: data.year, chartMonth: data.month})
       setMonth(data)
     }

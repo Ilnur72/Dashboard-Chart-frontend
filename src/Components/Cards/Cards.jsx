@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import Render from '../Render.js';
 
 
 import "./card.scss"
