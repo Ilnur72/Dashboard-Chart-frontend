@@ -12,17 +12,17 @@ const Header = ({dataRes}) => {
   const [month, setMonth] = useState("");
   useEffect(() => {
     async function getData(){
-      let {data} = await axios.get(`getHeadOne`)
-      setCount({chartYear: data.year, chartMonth: data.month})
-      setMonth(data)
+      // let {data} = await axios.get(`getHeadOne`)
+      // setCount({chartYear: data.year, chartMonth: data.month})
+      // setMonth(data)
     }
     getData()
   }, []);
   
   async function counterDecrement(){
     try {
-      let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth-1}`)
-      setMonth(data)
+      // let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth-1}`)
+      // setMonth(data)
       if(count.chartMonth > 1){
         setCount({...count, chartMonth: +count.chartMonth - 1})
       }
@@ -33,8 +33,8 @@ const Header = ({dataRes}) => {
 
   async function counterIncrement(){
     try {
-      let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth+1}`)
-      setMonth(data)
+      // let {data} = await axios.get(`getHeadOne/${count.chartYear}/${count.chartMonth+1}`)
+      // setMonth(data)
       if(count.chartMonth < 12){
         setCount({...count, chartMonth: +count.chartMonth + 1})
       }

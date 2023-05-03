@@ -12,23 +12,48 @@ import {
     Area,
   } from "recharts";
 
+  const data = {
+    "adminBodyDtoList": [
+      {
+        "day": 1,
+        "pv": 4
+      },
+      {
+        "day": 2,
+        "pv": 4
+      },
+      {
+        "day": 3,
+        "pv": 8
+      },
+      {
+        "day": 4,
+        "pv": 3
+      },
+      {
+        "day": 5,
+        "pv": 2
+      },
+    ]
+  }
+
 
   const Linechart = ({id, color, dataItem, idCard,}) => {
     const [chart, setChart] = useState([]);
     
-    useEffect(() => {
-      async function chartDataGet(index){
-        if(dataItem.length !== 0){
-          try {
-            const { data } = await axios.get(`getBody/${index}/${dataItem.year}/${dataItem.month}`)
-            setChart(data)
-          } catch (error) {
-            toast("Bu oyda ma'lumotlar yo'q!", {type: "error"})
-          }
-        }
-      }
-      chartDataGet(idCard)
-    }, [idCard,dataItem]);
+    // useEffect(() => {
+    //   async function chartDataGet(index){
+    //     if(dataItem.length !== 0){
+    //       try {
+    //         const { data } = await axios.get(`getBody/${index}/${dataItem.year}/${dataItem.month}`)
+    //         setChart(data)
+    //       } catch (error) {
+    //         toast("Bu oyda ma'lumotlar yo'q!", {type: "error"})
+    //       }
+    //     }
+    //   }
+    //   chartDataGet(idCard)
+    // }, [idCard,dataItem]);
 
 
   return (
@@ -38,7 +63,7 @@ import {
           className="chart-line mt-2"
           width={1140}
           height={450}
-          data={chart.adminBodyDtoList}
+          data={data.adminBodyDtoList}
           margin={{
             top: 5,
             right: 30,
