@@ -9,6 +9,7 @@ import calls from "../../assets/Images/calls.svg";
 import user from "../../assets/Images/users.svg";
 import order from "../../assets/Images/cart.svg";
 import { toast } from "react-toastify";
+import dataOrder from "../../Data/data.json"
 
 const dataCharts = {
     id : 32,
@@ -117,6 +118,7 @@ const Dashboard = ({ getData }) => {
           color={dataChart.color}
           dataItem={dataCharts}
           idCard={active}
+          orderData={active == 1 ? dataOrder.qongiroqlar : active == 2 ? dataOrder.tolovQilganlar : active == 3 ? dataOrder.tashriflarSoni : null}
         />
       </div>
     </div>

@@ -1,3 +1,147 @@
 {
-    
+    "qongiroqlar": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 23
+          },
+          {
+            "day": 2,
+            "pv": 52
+          },
+          {
+            "day": 3,
+            "pv": 64
+          },
+          {
+            "day": 4,
+            "pv": 24
+          },
+          {
+            "day": 5,
+            "pv": 74
+          }
+        ]
+      },
+    "buyurtmalarSoni": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 22
+          },
+          {
+            "day": 2,
+            "pv": 74
+          },
+          {
+            "day": 3,
+            "pv": 242
+          },
+          {
+            "day": 4,
+            "pv": 344
+          },
+          {
+            "day": 5,
+            "pv": 23
+          }
+        ]
+      },
+    "tashriflarSoni": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 125
+          },
+          {
+            "day": 2,
+            "pv": 251
+          },
+          {
+            "day": 3,
+            "pv": 642
+          },
+          {
+            "day": 4,
+            "pv": 342
+          },
+          {
+            "day": 5,
+            "pv": 543
+          }
+        ]
+      },
+    "sinov": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 433
+          },
+          {
+            "day": 2,
+            "pv": 463
+          },
+          {
+            "day": 3,
+            "pv": 834
+          },
+          {
+            "day": 4,
+            "pv": 334
+          },
+          {
+            "day": 5,
+            "pv": 223
+          }
+        ]
+      },
+    "tolovQilganlar": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 452
+          },
+          {
+            "day": 2,
+            "pv": 436
+          },
+          {
+            "day": 3,
+            "pv": 823
+          },
+          {
+            "day": 4,
+            "pv": 542
+          },
+          {
+            "day": 5,
+            "pv": 234
+          }
+        ]
+      },
+    "chiqibKetganlar": {
+        "adminBodyDtoList": [
+          {
+            "day": 1,
+            "pv": 523
+          },
+          {
+            "day": 2,
+            "pv": 653
+          },
+          {
+            "day": 3,
+            "pv": 234
+          },
+          {
+            "day": 4,
+            "pv": 342
+          },
+          {
+            "day": 5,
+            "pv": 123
+          }
+        ]
+      }
+
 }

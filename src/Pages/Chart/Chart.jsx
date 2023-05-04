@@ -7,6 +7,7 @@ import payment from "../../assets/Images/payment.svg";
 import sinov from "../../assets/Images/sinov.svg";
 import Linechart from "../../Components/Linechart/Linechart.jsx";
 import axios from "axios";
+import dataOrder from "../../Data/data.json"
 
 const dataCharts = {
   id : 32,
@@ -115,6 +116,7 @@ const Chartdashboard = ({ getData }) => {
           color={dataChart.color}
           dataItem={card}
           idCard={active}
+          orderData={active == 4 ? dataOrder.sinov : active == 5 ? dataOrder.tolovQilganlar : active == 6 ? dataOrder.chiqibKetganlar : null}
         />
       </div>
     </div>

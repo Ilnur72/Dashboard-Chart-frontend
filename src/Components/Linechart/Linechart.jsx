@@ -38,7 +38,7 @@ import {
   }
 
 
-  const Linechart = ({id, color, dataItem, idCard,}) => {
+  const Linechart = ({id, color, dataItem, idCard,orderData}) => {
     const [chart, setChart] = useState([]);
     
     // useEffect(() => {
@@ -63,7 +63,7 @@ import {
           className="chart-line mt-2"
           width={1140}
           height={450}
-          data={data.adminBodyDtoList}
+          data={orderData.adminBodyDtoList}
           margin={{
             top: 5,
             right: 30,

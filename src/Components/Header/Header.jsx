@@ -2,8 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import logo from "../../assets/Images/Ai-work.svg"
-
 import "./header.scss"
 
 
@@ -46,14 +44,15 @@ const Header = ({dataRes}) => {
   dataRes(count)
 
   return (
-    <header className='px-5 d-flex align-items-center'>
+    <header style={{height:"96px"}} className='px-5 d-flex align-items-center'>
        <div className='col-5'>
-          <Link to={"/"}><img className='' width={150} src={logo} alt="ai-work logo " /></Link>
+          {/* <Link to={"/"}></Link> */}
        </div>
         <div className='d-flex align-items-center justify-content-start col-7 px-5 gap-2'>
             <div className='d-flex align-items-center col-4 justify-content-between'>
               <button onClick={() => counterDecrement()} className='btn bg-primary py-0'><i className="fa-solid fa-arrow-left text-white"></i></button>
-              <strong className='text-white fs-4 mx-3'>{month.monthName}</strong>
+              {/* <strong className='text-white fs-4 mx-3'>{month.monthName}</strong> */}
+              <strong className='text-white fs-4 mx-3'>Yanvar</strong>
               <button onClick={() => counterIncrement()} className='btn bg-primary py-0'><i className="fa-solid fa-arrow-right text-white"></i></button>
             </div>
         </div>
